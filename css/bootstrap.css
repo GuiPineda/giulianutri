@@ -3015,6 +3015,16 @@ input[type="button"].btn-block {
   display: none;
 }
 
+.collapse.show {
+  background-color: rgb(69, 87, 55);
+  border-radius: 10%;
+  position: relative;
+  z-index: 1000;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+
 .collapsing {
   position: relative;
   height: 0;
@@ -4217,6 +4227,10 @@ input[type="button"].btn-block {
   -ms-flex-align: center;
   align-items: center;
 }
+
+
+
+
 
 .navbar-toggler {
   padding: 0.25rem 0.75rem;
