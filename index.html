@@ -12,6 +12,32 @@
   gtag('config', 'G-1Z4XPC4R22');
 </script>
 
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-16494446457/zEVyCL74su0ZEPmOlbk9',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+
+<script>
+  function contactWhatsApp(phone, message) {
+    // Monta a URL do WhatsApp
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+  
+    // Chama o método de conversão do Google
+    gtag_report_conversion(url);
+  }
+  </script>
+  
+
   <!-- Basic -->
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -45,9 +71,10 @@
 </head>
 
 <body>
-  <a href="https://wa.me/5511973309155?text=Olá%21%20Gostaria%20de%20agendar%20uma%20consulta" class="whatsapp-float" target="_blank">
+  <a href="javascript:void(0);" class="whatsapp-float" onclick="contactWhatsApp('5511973309155', 'Olá! Gostaria de agendar uma consulta.');">
     <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="Contate-nos pelo WhatsApp">
-</a>
+  </a>
+  
 
 
   <div class="hero_area">
@@ -82,7 +109,7 @@
                 <a class="nav-link" href="#planos">Planos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="https://wa.me/5511973309155?text=Olá%21%20Gostaria%20de%20agendar%20uma%20consulta" target="_blank">Contato</a>
+                <a href="javascript:void(0);" class="nav-link" onclick="contactWhatsApp('5511973309155', 'Olá! Gostaria de agendar uma consulta.');">Contato</a>
               </li>
             
             </ul>
@@ -107,7 +134,7 @@
                       Atendimento presencial e online em Sorocaba e região! 
                     </p>
                     <div class="btn-box">
-                      <a class="btn1" href="https://wa.me/5511973309155?text=Olá%21%20Gostaria%20de%20agendar%20uma%20consulta" target="_blank">
+                      <a class="btn1" href="javascript:void(0);" onclick="contactWhatsApp('5511973309155', 'Olá! Gostaria de agendar uma consulta.');">
                         Agendar consulta
                       </a>
                     </div>
@@ -247,9 +274,10 @@
           </div>
         </div>
         <div class="btn-box">
-          <a href="https://wa.me/5511973309155?text=Olá%21%20Gostaria%20de%20agendar%20uma%20consulta" target="_blank">
+          <a href="javascript:void(0);" onclick="contactWhatsApp('5511973309155', 'Olá! Gostaria de agendar uma consulta');">
             Agendar consulta
           </a>
+          
         </div>
       </div>
     </div>
@@ -328,7 +356,7 @@
         </div>
       </div>
       <div class="btn-box">
-        <a href="https://wa.me/5511973309155?text=Olá%21%20Gostaria%20de%20agendar%20uma%20consulta" target="_blank">
+        <a href="javascript:void(0);" onclick="contactWhatsApp('5511973309155', 'Olá! Gostaria de agendar uma consulta');">
           Agende sua consulta!
         </a>
       </div>
@@ -488,6 +516,8 @@
   </script>
   <!-- custom js -->
   <script type="text/javascript" src="js/custom.js"></script>
+
+  
 
 
 </body>
