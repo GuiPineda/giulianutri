@@ -120,7 +120,7 @@ function gtag_report_conversion(url) {
     <!-- end header section -->
     <!-- slider section -->
     <section class="slider_section ">
-      <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+      <div id="customCarousel1" class="carousel slide" data-ride="carousel"  data-interval="6000" data-pause="hover">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <div class="container ">
@@ -328,44 +328,77 @@ function gtag_report_conversion(url) {
 
   <section id="planos" class="doctor_section layout_padding">
     <div class="container">
-      <div class="heading_container heading_center">
-        <h2>
-          Planos
-        </h2>
-        <p class="col-md-10 mx-auto px-0">
-          Nossos planos são personalizados de acordo com sua necessidade!
-        </p>
+      <div class="heading_container heading_center heading_padding_bottom">
+        <h2 class="planos-title">Formas de Atendimento</h2>
       </div>
       <div class="row">
-        <div class="col-sm-6 col-lg-4 mx-auto">
-          <div class="box">
-            <div class="img-box">
-              <img src="images/d1.jpg" alt="">
+        <div class="col-sm-12 col-md-4 mb-4 d-flex">
+          <div class="plano-card flex-fill text-center p-4 shadow rounded">
+            <div class="plano-image mx-auto mb-3">
+              <img src="images/giu-computador.jpg" alt="Consulta Online" class="plano-img">
             </div>
+            <h4 class="plano-subtitle">Consulta 100% Online</h4>
+            <ul class="plano-list text-start">
+              <li>Possui 45min de duração.</li>
+              <li>Anamnese nutricional.</li>
+              <li>Elaboração do plano alimentar personalizado.</li>
+              <li>Prescrição de suplementos (se necessário).</li>
+              <li>Lista de compra semanal completa.</li>
+              <li>Checklist de metas diárias.</li>
+              <li>Acesso ao App WebDiet.</li>
+              <li>Suporte integral via WhatsApp.</li>
+            </ul>
           </div>
         </div>
-        <div class="col-sm-6 col-lg-4 mx-auto">
-          <div class="box">
-            <div class="img-box">
-              <img src="images/d2.jpg" alt="">
+        <div class="col-sm-12 col-md-4 mb-4 d-flex">
+          <div class="plano-card flex-fill text-center p-4 shadow rounded">
+            <div class="plano-image mx-auto mb-3">
+              <img src="images/giu-presencial.jpg" alt="Consulta Presencial" class="plano-img">
             </div>
+            <h4 class="plano-subtitle">Consulta Presencial</h4>
+            <ul class="plano-list text-start">
+              <li>Possui 1 hora de duração.</li>
+              <li>Anamnese nutricional.</li>
+              <li>Avaliação Antropométrica. (medidas corporais)</li>
+              <li>Elaboração do plano alimentar personalizado.</li>
+              <li>Prescrição de suplementos (se necessário).</li>
+              <li>Lista de compra semanal completa.</li>
+              <li>Checklist de metas.</li>
+              <li>Acesso ao App WebDiet.</li>
+              <li>Suporte integral via WhatsApp.</li>
+            </ul>
           </div>
         </div>
-        <div class="col-sm-6 col-lg-4 mx-auto">
-          <div class="box">
-            <div class="img-box">
-              <img src="images/d3.jpg" alt="">
+        <div class="col-sm-12 col-md-4 mb-4 d-flex">
+          <div class="plano-card flex-fill text-center p-4 shadow rounded">
+            <div class="plano-image mx-auto mb-3">
+              <img src="images/giu-servicos.jpg" alt="Outros Serviços" class="plano-img">
             </div>
+            <h4 class="plano-subtitle">Outros Serviços</h4>
+            <ul class="plano-list text-start">
+              <li>Adequação de empresas e restaurantes às normas da vigilância sanitária.</li>
+              <li>Consultoria online.</li>
+              <li>Consultoria para unidades de alimentação.</li>
+              <li>Parcerias com marcas e atletas.</li>
+              <li>Prescrição de exames laboratoriais pertinentes à nutrição.</li>
+              <li>Programas de reeducação alimentar em grupo.</li>
+              <li>Projetos nutricionais em empresas.</li>
+              <li>Realização de avaliação física (não inclui consulta nutricional).</li>
+              <li>Workshops e palestras educativas.</li>
+
+            </ul>
           </div>
         </div>
       </div>
-      <div class="btn-box">
-        <a href="javascript:void(0);" onclick="contactWhatsApp('5511973309155', 'Olá! Gostaria de agendar uma consulta');">
+      <div class="btn-box text-center mt-4">
+        <a class="plano-btn" href="javascript:void(0);" onclick="contactWhatsApp('5511973309155', 'Olá! Gostaria de agendar uma consulta');">
           Agende sua consulta!
         </a>
       </div>
     </div>
   </section>
+  
+  
 
   <!-- end doctor section -->
 
