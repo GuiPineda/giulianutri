@@ -1,0 +1,316 @@
+/* 
+   Corporate Consulting Style - Giulia Celli
+   Focus: Food Safety and Professional Consulting
+*/
+
+:root {
+    --corporate-dark-green: #0B2516;
+    --corporate-green: #1A4D2E;
+    --corporate-light-green: #9fb594;
+    --corporate-gray: #f8f9fa;
+    --corporate-dark-gray: #333333;
+    --corporate-white: #ffffff;
+    --accent-gold: #D4A373;
+
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Nunito', sans-serif;
+
+    --gradient-professional: linear-gradient(135deg, rgba(159, 181, 148, 0.9) 0%, rgba(26, 77, 46, 0.8) 100%);
+    --shadow-corporate: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --transition-fast: all 0.3s ease;
+}
+
+/* Base Adjustments */
+body {
+    background-color: var(--corporate-white);
+}
+
+.section-padding {
+    padding: 100px 20px;
+}
+
+/* Hero Section */
+.hero-corporate {
+    position: relative;
+    height: 90vh;
+    min-height: 500px;
+    background-color: var(--corporate-dark-green);
+    display: flex;
+    align-items: center;
+    color: var(--corporate-white);
+    overflow: hidden;
+    margin-top: -75px;
+    padding-top: 75px;
+}
+
+.hero-corporate-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-professional);
+    z-index: 1;
+}
+
+.hero-corporate-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-corporate h1 {
+    font-size: 3.5rem;
+    color: var(--corporate-white);
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.hero-corporate p {
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+/* Motivation Section (Why Audit?) */
+.motivation {
+    background-color: var(--corporate-gray);
+}
+
+.motivation-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.motivation-list {
+    list-style: none;
+}
+
+.motivation-list li {
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.1rem;
+    color: var(--corporate-dark-gray);
+}
+
+.motivation-list li i {
+    color: #e74c3c;
+    /* Alert color for risks */
+    font-size: 1.2rem;
+}
+
+/* Service Models */
+.models-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.model-card {
+    background: var(--corporate-white);
+    padding: 50px 40px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-corporate);
+    text-align: center;
+    transition: var(--transition-fast);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+}
+
+.model-card:hover {
+    transform: translateY(-10px);
+}
+
+.model-card.featured {
+    border: 2px solid var(--corporate-green);
+    transform: scale(1.05);
+    z-index: 2;
+}
+
+.model-card.featured:hover {
+    transform: scale(1.08);
+}
+
+.model-icon {
+    font-size: 3rem;
+    color: var(--corporate-green);
+    margin-bottom: 25px;
+}
+
+.model-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--corporate-dark-green);
+}
+
+.model-card p {
+    color: var(--corporate-dark-gray);
+    margin-bottom: 30px;
+    flex-grow: 1;
+}
+
+/* Technical Services List */
+.tech-services {
+    background-color: var(--corporate-dark-green);
+    color: var(--corporate-white);
+}
+
+.tech-services .section-title h2 {
+    color: var(--corporate-white);
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.tech-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: var(--transition-fast);
+}
+
+.tech-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.tech-item i {
+    color: var(--accent-gold);
+}
+
+/* For Whom Section */
+.for-whom-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    text-align: center;
+}
+
+.target-card {
+    padding: 30px;
+    background: var(--corporate-gray);
+    border-radius: 8px;
+    font-weight: 600;
+    color: var(--corporate-dark-green);
+    transition: var(--transition-fast);
+}
+
+.target-card:hover {
+    background: var(--corporate-light-green);
+    color: var(--corporate-white);
+}
+
+/* Responsible Technician */
+.rt-section {
+    background-color: var(--corporate-gray);
+}
+
+.rt-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.rt-img img {
+    border-radius: 12px;
+    box-shadow: var(--shadow-corporate);
+}
+
+.rt-text h2 {
+    font-size: 2.5rem;
+}
+
+.rt-text .subtitle {
+    display: block;
+    font-size: 1.2rem;
+    color: var(--corporate-green);
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* CTA Buttons */
+.btn-corp {
+    padding: 18px 45px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 4px;
+    /* More professional than pills */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-corp-green {
+    background-color: var(--corporate-green);
+    color: var(--corporate-white);
+}
+
+.btn-corp-green:hover {
+    background-color: #24633d;
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .hero-corporate h1 {
+        font-size: 2.5rem;
+    }
+
+    .motivation-grid,
+    .rt-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .motivation-list li {
+        justify-content: flex-start;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+    }
+
+    .rt-img {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .model-card.featured {
+        transform: scale(1);
+    }
+
+    .model-card.featured:hover {
+        transform: translateY(-10px);
+    }
+
+    .for-whom-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section-padding {
+        padding: 60px 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .for-whom-grid {
+        grid-template-columns: 1fr;
+    }
+}
