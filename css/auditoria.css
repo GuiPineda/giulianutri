@@ -4,20 +4,22 @@
 */
 
 :root {
-    --corporate-dark-green: #0B2516;
-    --corporate-green: #1A4D2E;
-    --corporate-light-green: #9fb594;
-    --corporate-gray: #f8f9fa;
-    --corporate-dark-gray: #333333;
+    --corporate-dark-green: #081C10;
+    --corporate-green: #143D25;
+    --corporate-accent: #C49463;
+    --corporate-light-green: #E8F0E9;
+    --corporate-gray: #F4F7F5;
+    --corporate-dark-gray: #2C3E50;
     --corporate-white: #ffffff;
     --accent-gold: #D4A373;
 
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Nunito', sans-serif;
 
-    --gradient-professional: linear-gradient(135deg, rgba(159, 181, 148, 0.9) 0%, rgba(26, 77, 46, 0.8) 100%);
-    --shadow-corporate: 0 4px 20px rgba(0, 0, 0, 0.08);
-    --transition-fast: all 0.3s ease;
+    --gradient-corporate: linear-gradient(135deg, var(--corporate-dark-green) 0%, var(--corporate-green) 100%);
+    --gradient-professional: linear-gradient(135deg, rgba(8, 28, 16, 0.95) 0%, rgba(20, 61, 37, 0.9) 100%);
+    --shadow-corporate: 0 10px 30px rgba(0, 0, 0, 0.05);
+    --transition-fast: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 /* Base Adjustments */
@@ -32,8 +34,7 @@ body {
 /* Hero Section */
 .hero-corporate {
     position: relative;
-    height: 90vh;
-    min-height: 500px;
+    min-height: 90vh;
     background-color: var(--corporate-dark-green);
     display: flex;
     align-items: center;
@@ -49,8 +50,19 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--gradient-professional);
+    background: linear-gradient(135deg, rgb(8 28 16 / 34%) 0%, rgba(20, 61, 37, 0.9) 100%);
     z-index: 1;
+}
+
+.hero-corporate-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 79% 50%;
+    z-index: 0;
 }
 
 .hero-corporate-content {
@@ -75,16 +87,107 @@ body {
     font-weight: 300;
 }
 
+.hero-btns {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn-corp-outline {
+    background: transparent;
+    border: 2px solid var(--corporate-white);
+    color: var(--corporate-white);
+}
+
+.btn-corp-outline:hover {
+    background: var(--corporate-white);
+    color: var(--corporate-green);
+}
+
+/* Institutional Section */
+.institutional {
+    background-color: var(--corporate-white);
+}
+
+/* Standard Grid and Image Styles */
+.institutional-grid,
+.motivation-grid,
+.rt-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.institutional-img img,
+.motivation-img img,
+.rt-img img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.1);
+    transition: var(--transition-fast);
+}
+
+.institutional-img img:hover,
+.motivation-img img:hover,
+.rt-img img:hover {
+    transform: translateY(-10px);
+    box-shadow: 25px 25px 80px rgba(0, 0, 0, 0.15);
+}
+
+/* Institutional Section */
+.institutional {
+    background-color: var(--corporate-white);
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--corporate-accent);
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.institutional-text h2 {
+    font-size: 3rem;
+    margin-bottom: 25px;
+}
+
+.institutional-text p {
+    font-size: 1.15rem;
+    color: var(--corporate-dark-gray);
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.institutional-stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--corporate-green);
+    font-family: var(--font-heading);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--corporate-dark-gray);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
 /* Motivation Section (Why Audit?) */
 .motivation {
     background-color: var(--corporate-gray);
-}
-
-.motivation-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: center;
 }
 
 .motivation-list {
@@ -211,25 +314,82 @@ body {
 }
 
 .target-card:hover {
-    background: var(--corporate-light-green);
+    background: var(--corporate-green);
     color: var(--corporate-white);
+    transform: translateY(-5px);
+}
+
+.target-card i {
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+/* Values Section */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.value-card {
+    background: var(--corporate-white);
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: var(--shadow-corporate);
+    transition: var(--transition-fast);
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.value-card i {
+    font-size: 2.5rem;
+    color: var(--corporate-accent);
+    margin-bottom: 20px;
+}
+
+.value-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+/* Final CTA */
+.final-cta {
+    background: var(--gradient-corporate);
+    color: var(--corporate-white);
+    padding: 120px 20px;
+}
+
+.cta-title {
+    color: var(--corporate-white) !important;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.cta-subtitle {
+    font-size: 1.3rem;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    opacity: 0.9;
+}
+
+.btn-white {
+    background-color: var(--corporate-white);
+    color: var(--corporate-dark-green);
+}
+
+.btn-white:hover {
+    background-color: var(--corporate-gray);
+    transform: scale(1.05);
 }
 
 /* Responsible Technician */
 .rt-section {
     background-color: var(--corporate-gray);
-}
-
-.rt-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 60px;
-    align-items: center;
-}
-
-.rt-img img {
-    border-radius: 12px;
-    box-shadow: var(--shadow-corporate);
 }
 
 .rt-text h2 {
@@ -271,9 +431,11 @@ body {
         font-size: 2.5rem;
     }
 
+    .institutional-grid,
     .motivation-grid,
     .rt-grid {
         grid-template-columns: 1fr;
+        gap: 40px;
         text-align: center;
     }
 
@@ -285,9 +447,41 @@ body {
         text-align: left;
     }
 
-    .rt-img {
-        max-width: 400px;
+    .rt-img,
+    .institutional-img,
+    .motivation-img {
+        max-width: 500px;
         margin: 0 auto;
+    }
+
+    .institutional-text h2 {
+        font-size: 2.2rem;
+    }
+
+    .institutional-stats {
+        justify-content: center;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-title {
+        font-size: 2.22rem;
+    }
+
+    .hero-btns {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-btns .btn-corp {
+        width: 100%;
+        max-width: 300px;
     }
 }
 
