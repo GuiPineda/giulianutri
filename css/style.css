@@ -633,6 +633,9 @@ img {
     right: 0;
 }
 
+
+
+
 @media (max-width: 768px) {
     .testimonials-grid {
         padding: 20px 20px;
@@ -915,5 +918,11 @@ footer {
 
     .features-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 500px) {
+    .hero {
+        height: 75vh;
     }
 }
