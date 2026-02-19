@@ -41,6 +41,29 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Services Toggle (Mobile Only)
+    const toggleBtn = document.getElementById('toggleServicesBtn');
+    const extraServices = document.getElementById('extraServices');
+
+    if (toggleBtn && extraServices) {
+        toggleBtn.addEventListener('click', () => {
+            const isExpanded = extraServices.classList.toggle('active');
+            const btnText = toggleBtn.querySelector('.btn-text');
+            const btnIcon = toggleBtn.querySelector('i');
+
+            if (isExpanded) {
+                btnText.textContent = 'Exibir menos';
+                btnIcon.classList.replace('fa-chevron-down', 'fa-chevron-up');
+            } else {
+                btnText.textContent = 'Exibir mais';
+                btnIcon.classList.replace('fa-chevron-up', 'fa-chevron-down');
+
+                // Optional: scroll back to services top if closing
+                document.getElementById('servicos').scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
 });
 
 // WhatsApp Function with Conversion Tracking
