@@ -278,6 +278,14 @@ body {
     gap: 20px;
 }
 
+.tech-grid-mobile-hidden {
+    display: contents;
+}
+
+.btn-toggle-mobile {
+    display: none !important;
+}
+
 .tech-item {
     background: rgba(255, 255, 255, 0.05);
     padding: 20px;
@@ -297,6 +305,13 @@ body {
 }
 
 /* For Whom Section */
+.for-whom.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+}
+
 .for-whom-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -482,6 +497,52 @@ body {
     .hero-btns .btn-corp {
         width: 100%;
         max-width: 300px;
+    }
+
+    /* Mobile specific toggle styles - Minimalist Version */
+    .btn-toggle-mobile {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin: 20px auto 0;
+        background: transparent !important;
+        border: 1px solid rgba(255, 255, 255, 0.3) !important;
+        color: var(--corporate-white) !important;
+        padding: 8px 20px !important;
+        font-size: 0.9rem !important;
+        font-weight: 400 !important;
+        border-radius: 30px !important;
+        text-transform: none !important;
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    }
+
+    .btn-toggle-mobile:active {
+        background: rgba(255, 255, 255, 0.1) !important;
+        transform: scale(0.98);
+    }
+
+    .tech-grid-mobile-hidden {
+        display: flex;
+        /* Always flex but hidden by height/opacity */
+        flex-direction: column;
+        gap: 20px;
+        grid-column: 1 / -1;
+        width: 100%;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transform: translateY(10px);
+        transition: max-height 0.8s cubic-bezier(0.165, 0.84, 0.44, 1),
+            opacity 0.6s ease,
+            transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .tech-grid-mobile-hidden.active {
+        max-height: 2000px;
+        /* Arbitrary large value for expansion */
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
