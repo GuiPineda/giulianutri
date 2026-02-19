@@ -96,7 +96,7 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container">
-            <a href="#" class="logo">
+            <a href="index.html" class="logo">
                 <img src="images/logo-giulia.png" alt="GC Auditoria Logo"
                     style="height: 45px; margin-right: 10px; vertical-align: middle;">
                 GC Auditoria
@@ -105,7 +105,7 @@
                 <i class="fa fa-bars"></i>
             </div>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#" class="nav-link">Home</a></li>
+                <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="#por-que" class="nav-link">Por que Auditoria?</a></li>
                 <li><a href="#modelos" class="nav-link">Modelos</a></li>
                 <li><a href="#servicos" class="nav-link">Serviços</a></li>
@@ -175,7 +175,7 @@
                 </div>
                 <div class="motivation-grid">
                     <div class="motivation-img">
-                        <img src="images/motivo-auditoria.png" alt="Equipe Técnica Giulia Celli">
+                        <img src="images/motivo-auditoria.png" alt="Equipe Técnica GC Auditoria">
                     </div>
                     <ul class="motivation-list">
                         <li><i class="fa fa-exclamation-triangle"></i> Risco de multa ou interdição</li>
@@ -249,19 +249,33 @@
                     </div>
                     <div class="tech-item"><i class="fa fa-check-circle"></i> Rótulos</div>
                     <div class="tech-item"><i class="fa fa-check-circle"></i> Regularização de alvarás</div>
-                    <div class="tech-item"><i class="fa fa-check-circle"></i> Implantação do Sistema HACCP e Gestão da
-                        Qualidade (ISO 9001)</div>
-                    <div class="tech-item"><i class="fa fa-check-circle"></i> MAPA (Ministério da Agricultura, Pecuária
-                        e Abastecimento)</div>
-                    <div class="tech-item"><i class="fa fa-check-circle"></i> Assessoria no planejamento de cozinhas
+
+                    <!-- Hidden services on mobile -->
+                    <div class="tech-grid-mobile-hidden" id="extraServices">
+                        <div class="tech-item"><i class="fa fa-check-circle"></i> Implantação do Sistema HACCP e Gestão
+                            da
+                            Qualidade (ISO 9001)</div>
+                        <div class="tech-item"><i class="fa fa-check-circle"></i> MAPA (Ministério da Agricultura,
+                            Pecuária
+                            e Abastecimento)</div>
+                        <div class="tech-item"><i class="fa fa-check-circle"></i> Assessoria no planejamento de cozinhas
+                        </div>
+                        <div class="tech-item"><i class="fa fa-check-circle"></i> Planejamento e Elaboração de Cardápios
+                        </div>
+                        <div class="tech-item"><i class="fa fa-check-circle"></i> Desenvolvimento e melhorias de
+                            produtos
+                        </div>
+                        <div class="tech-item"><i class="fa fa-check-circle"></i> Homologação de Fornecedores</div>
+                        <div class="tech-item"><i class="fa fa-check-circle"></i> Acompanhamento de Buffets, Feiras e
+                            Eventos</div>
                     </div>
-                    <div class="tech-item"><i class="fa fa-check-circle"></i> Planejamento e Elaboração de Cardápios
-                    </div>
-                    <div class="tech-item"><i class="fa fa-check-circle"></i> Desenvolvimento e melhorias de produtos
-                    </div>
-                    <div class="tech-item"><i class="fa fa-check-circle"></i> Homologação de Fornecedores</div>
-                    <div class="tech-item"><i class="fa fa-check-circle"></i> Acompanhamento de Buffets, Feiras e
-                        Eventos</div>
+                </div>
+
+                <!-- Toggle Button (Mobile Only via CSS) -->
+                <div class="text-center mt-30">
+                    <button id="toggleServicesBtn" class="btn-corp btn-corp-outline btn-toggle-mobile">
+                        <span class="btn-text">Exibir mais</span> <i class="fa fa-chevron-down"></i>
+                    </button>
                 </div>
             </div>
         </section>
