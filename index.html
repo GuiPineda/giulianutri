@@ -32,6 +32,9 @@
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Nunito:wght@300;400;600;700&display=swap"
         rel="stylesheet">
 
+    <!-- Preload LCP Image -->
+    <link rel="preload" as="image" href="images/hero-bg2.jpg" fetchpriority="high">
+
     <!-- Font Awesome -->
     <link href="css/font-awesome.min.css" rel="stylesheet" />
 
@@ -127,7 +130,7 @@
 
     <!-- Principal -->
     <header class="hero">
-        <img src="images/hero-bg2.jpg" alt="Nutricionista Giulia Celli" class="hero-bg">
+        <img src="images/hero-bg2.jpg" alt="Nutricionista Giulia Celli" class="hero-bg" fetchpriority="high">
         <div class="hero-content">
             <div class="hero-carousel" id="heroCarousel">
                 <div class="hero-slide active">
@@ -518,7 +521,7 @@
                 </div>
                 <div class="footer-col">
                     <h4>Legal</h4>
-                    <p>Giulia Rudge Celli - CRN-3 83613/P</p>
+                    <p>Giulia Rudge Celli - CRN-3 83613</p>
                     <p style="margin-top:10px; font-size: 0.8rem;">Não armazenamos cookies.</p>
                     <div style="margin-top: 20px;">
                         <img src="images/logo-giulia.png" alt="Giulia Celli Logo"

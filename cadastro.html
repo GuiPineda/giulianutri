@@ -155,7 +155,7 @@
 
                         <div class="form-group">
                             <label for="dtnasc">Data de nascimento</label>
-                            <input type="date" id="dtnasc" name="dtnasc" class="form-control" required>
+                            <input type="text" id="dtnasc" name="dtnasc" class="form-control" required placeholder="DD/MM/AAAA" maxlength="10" onkeyup="maskData(this)">
                         </div>
 
                         <div class="form-group">
@@ -241,7 +241,7 @@
                 </div>
                 <div class="footer-col">
                     <h4>Legal</h4>
-                    <p>Giulia Rudge Celli - CRN-3 83613/P</p>
+                    <p>Giulia Rudge Celli - CRN-3 83613</p>
                     <p style="margin-top:10px; font-size: 0.8rem;">Não armazenamos cookies.</p>
                     <div style="margin-top: 20px;">
                         <img src="images/logo-giulia.png" alt="Giulia Celli"
@@ -291,6 +291,21 @@
             i.setAttribute("maxlength", "14");
             if (v.length == 3 || v.length == 7) i.value += ".";
             if (v.length == 11) i.value += "-";
+        }
+
+        // Máscara de Data (DD/MM/AAAA)
+        function maskData(i) {
+            let v = i.value.replace(/\D/g, "");
+            if (v.length > 8) {
+                v = v.substring(0, 8);
+            }
+            if (v.length > 4) {
+                i.value = v.substring(0, 2) + "/" + v.substring(2, 4) + "/" + v.substring(4, 8);
+            } else if (v.length > 2) {
+                i.value = v.substring(0, 2) + "/" + v.substring(2, 4);
+            } else {
+                i.value = v;
+            }
         }
 
         // Máscara de CEP 
@@ -462,18 +477,12 @@
                 }
             }
 
-            let dtnascFormatada = dtnasc;
-            if (dtnasc) {
-                const parts = dtnasc.split('-');
-                if (parts.length === 3) dtnascFormatada = `${parts[2]}/${parts[1]}/${parts[0]}`;
-            }
-
             const message = `*Novo Cadastro de Paciente (Mensagem Automática)*
 
 *Nome Completo:* ${nome}
 *CPF:* ${cpf}
 *Endereço:* ${endereco}
-*Data de Nascimento:* ${dtnascFormatada}
+*Data de Nascimento:* ${dtnasc}
 *E-mail:* ${email}
 *Forma de Pagamento:* ${pagamentoValor}
 *Problemas de saúde:* ${saude}
