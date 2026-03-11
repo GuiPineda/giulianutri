@@ -3,8 +3,6 @@
    Designed for Mobile-First Responsiveness and Premium Aesthetic
 */
 
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Playfair+Display:wght@400;600;700&display=swap");
-
 :root {
     /* Color Palette */
     --primary-color: #1A4D2E;
@@ -1010,4 +1008,134 @@ footer {
     .hero {
         height: 85vh;
     }
+}
+
+/* ========================================= */
+/* Cadastro Form Styles */
+/* ========================================= */
+.cadastro-section {
+    padding: var(--section-padding);
+    background-color: var(--bg-color);
+}
+
+.cadastro-form-card {
+    background-color: var(--surface-color);
+    padding: 40px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+.cadastro-form .form-group {
+    margin-bottom: 25px;
+}
+
+.cadastro-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.cadastro-form .form-control {
+    width: 100%;
+    padding: 14px 15px;
+    border: 1px solid #ddd;
+    border-radius: var(--radius-md);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    transition: var(--transition);
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+}
+
+.cadastro-form textarea.form-control {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.cadastro-form .form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(26, 77, 46, 0.1);
+    background-color: var(--white);
+}
+
+.cadastro-form .radio-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.cadastro-form .radio-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+}
+
+.cadastro-form .radio-item input[type="radio"] {
+    accent-color: var(--primary-color);
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.cadastro-form .btn-submit-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.cadastro-form .btn-submit-container .btn {
+    width: 100%;
+    max-width: 300px;
+    font-size: 1.1rem;
+    padding: 16px 40px;
+}
+
+@media (max-width: 768px) {
+    .cadastro-form-card {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .cadastro-form .radio-group {
+        grid-template-columns: 1fr;
+    }
+
+    .cadastro-form .btn-submit-container .btn {
+        max-width: 100%;
+    }
+}
+
+/* Validation Highlights */
+.cadastro-form .form-control.is-invalid {
+    border-color: #e74c3c;
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+}
+
+.cadastro-form .radio-group.is-invalid {
+    border: 1px solid #e74c3c;
+    padding: 10px;
+    border-radius: var(--radius-md);
+    background-color: rgba(231, 76, 60, 0.05);
+}
+
+.alert-error {
+    background-color: #fdeaea;
+    color: #e74c3c;
+    padding: 15px;
+    border-radius: var(--radius-md);
+    margin-bottom: 25px;
+    font-weight: 600;
+    text-align: center;
+    border: 1px solid #fad2d2;
 }
