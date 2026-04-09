@@ -6,7 +6,7 @@
 
 const GOOGLE_CONFIG = {
     apiKey: 'AIzaSyCu4fy7DW8mnfseR6x1R5BX3CIo9j6ZXho',
-    placeId: 'ChIJ99G3-2yLxVQRYeiF5PViSSU', // Place ID for Nutricionista Giulia Celli
+    placeId: 'ChIJ99Gn-2yLxZQR3OiF7PViSSU', // Place ID for Nutricionista Giulia Celli
     maxReviews: 5
 };
 
