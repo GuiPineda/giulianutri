@@ -577,40 +577,46 @@
         }
 
         // Testimonials Carousel Logic
-        const testimonialsGrid = document.getElementById('testimonialsGrid');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
+        window.initTestimonialsCarousel = function () {
+            const testimonialsGrid = document.getElementById('testimonialsGrid');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
 
-        if (testimonialsGrid && prevBtn && nextBtn) {
-            nextBtn.addEventListener('click', () => {
-                const card = testimonialsGrid.querySelector('.testimonial-card');
-                const gap = window.innerWidth < 768 ? 15 : 30; // Matches CSS
-                const scrollAmount = card.offsetWidth + gap;
-                const maxScroll = testimonialsGrid.scrollWidth - testimonialsGrid.clientWidth;
+            if (testimonialsGrid && prevBtn && nextBtn) {
+                // Clear existing listeners to avoid duplication
+                const newNextBtn = nextBtn.cloneNode(true);
+                const newPrevBtn = prevBtn.cloneNode(true);
+                nextBtn.parentNode.replaceChild(newNextBtn, nextBtn);
+                prevBtn.parentNode.replaceChild(newPrevBtn, prevBtn);
 
-                // Check if we are near the end (allow small buffer for precision issues)
-                if (testimonialsGrid.scrollLeft >= maxScroll - 10) {
-                    // Loop back to start
-                    testimonialsGrid.scrollTo({ left: 0, behavior: 'smooth' });
-                } else {
-                    testimonialsGrid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-                }
-            });
+                newNextBtn.addEventListener('click', () => {
+                    const card = testimonialsGrid.querySelector('.testimonial-card');
+                    const gap = window.innerWidth < 768 ? 15 : 30; // Matches CSS
+                    const scrollAmount = card.offsetWidth + gap;
+                    const maxScroll = testimonialsGrid.scrollWidth - testimonialsGrid.clientWidth;
 
-            prevBtn.addEventListener('click', () => {
-                const card = testimonialsGrid.querySelector('.testimonial-card');
-                const gap = window.innerWidth < 768 ? 15 : 30; // Matches CSS
-                const scrollAmount = card.offsetWidth + gap;
+                    if (testimonialsGrid.scrollLeft >= maxScroll - 10) {
+                        testimonialsGrid.scrollTo({ left: 0, behavior: 'smooth' });
+                    } else {
+                        testimonialsGrid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                    }
+                });
 
-                // Check if we are near the start
-                if (testimonialsGrid.scrollLeft <= 10) {
-                    // Loop to end
-                    testimonialsGrid.scrollTo({ left: testimonialsGrid.scrollWidth, behavior: 'smooth' });
-                } else {
-                    testimonialsGrid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-                }
-            });
-        }
+                newPrevBtn.addEventListener('click', () => {
+                    const card = testimonialsGrid.querySelector('.testimonial-card');
+                    const gap = window.innerWidth < 768 ? 15 : 30; // Matches CSS
+                    const scrollAmount = card.offsetWidth + gap;
+
+                    if (testimonialsGrid.scrollLeft <= 10) {
+                        testimonialsGrid.scrollTo({ left: testimonialsGrid.scrollWidth, behavior: 'smooth' });
+                    } else {
+                        testimonialsGrid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                    }
+                });
+            }
+        };
+
+        // Don't call it immediately, let Google Reviews JS handle it for atomic loading.
 
         // Google Conversion Code (Inline for simplicity in new template)
         function gtag_report_conversion(url) {
