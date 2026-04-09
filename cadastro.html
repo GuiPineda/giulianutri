@@ -94,7 +94,7 @@
     </header>
 
     <main>
-        <section class="cadastro-section">
+        <section class="cadastro-section" id="cadastro-paciente">
             <div class="container">
                 <div class="section-title">
                     <h2>Cadastro de Paciente</h2>
@@ -491,6 +491,17 @@
             contactWhatsApp(message);
             return false; /* Prevent default form submission reload */
         }
+
+        // Auto-scroll para a seção de Cadastro ao carregar a página
+        window.addEventListener('load', () => {
+            const cadastroSection = document.getElementById('cadastro-paciente');
+            if (cadastroSection) {
+                // Pequeno delay para garantir que o layout esteja estabilizado
+                setTimeout(() => {
+                    cadastroSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 500);
+            }
+        });
     </script>
 </body>
 

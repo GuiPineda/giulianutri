@@ -1,0 +1,13 @@
+# Documentos e arquivos pesados
+Método LEVE - Noivas.pdf
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Editores / IDEs
+.vscode/
+.idea/
+
+# Git
+.git/
