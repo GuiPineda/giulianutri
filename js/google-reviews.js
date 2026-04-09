@@ -30,19 +30,33 @@ window.loadReviews = function () {
     }, (place, status) => {
         if (status === google.maps.places.PlacesServiceStatus.OK && place.reviews) {
             
-            // Sort reviews by rating descending and then time
-            const sortedReviews = place.reviews
-                .sort((a, b) => b.rating - a.rating || b.time - a.time)
-                .slice(0, GOOGLE_CONFIG.maxReviews);
+            // 1. Filtrar: Apenas 5 estrelas e que possuem texto
+            const filteredReviews = place.reviews.filter(r => r.rating === 5 && r.text && r.text.trim().length > 0);
 
-            sortedReviews.forEach(review => {
-                const card = createReviewCard(review);
+            // 2. Criar os elementos dos cards do Google
+            const googleCards = filteredReviews.slice(0, GOOGLE_CONFIG.maxReviews).map(review => createReviewCard(review));
+
+            // 3. Pegar os cards fixos que já estão no HTML
+            const fixedCards = Array.from(testimonialsGrid.querySelectorAll('.testimonial-card:not(.google-review)'));
+
+            // 4. Unir todos os cards em uma única lista
+            const allCards = [...fixedCards, ...googleCards];
+
+            // 5. Embaralhar a lista (Algoritmo Fisher-Yates)
+            for (let i = allCards.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [allCards[i], allCards[j]] = [allCards[j], allCards[i]];
+            }
+
+            // 6. Limpar o container e reinserir na ordem aleatória
+            testimonialsGrid.innerHTML = '';
+            allCards.forEach(card => {
                 testimonialsGrid.appendChild(card);
             });
 
-            console.log(`Successfully loaded ${sortedReviews.length} reviews from Google.`);
+            console.log(`Sucesso: ${googleCards.length} avaliações do Google mescladas aleatoriamente.`);
         } else {
-            console.error('Failed to fetch Google reviews:', status);
+            console.error('Falha ao buscar avaliações do Google:', status);
         }
     });
 };
